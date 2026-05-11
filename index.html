@@ -3,113 +3,129 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Craig Qu｜电竞IP内容导演</title>
-  <meta name="description" content="Craig Qu 的个人职业主页：电竞IP内容导演、电竞赛事内容生态、大型直播内容统筹。" />
+  <title>黄政怡｜游戏IP内容与品牌内容生态</title>
+  <meta name="description" content="黄政怡的个人职业主页：游戏IP内容、品牌内容生态、大型直播内容与年轻用户体验。" />
   <style>
     :root {
-      --bg: #f4f1ea;
-      --ink: #171717;
-      --muted: #68645d;
-      --line: #d9d2c4;
-      --card: #fffaf1;
-      --accent: #ff5c35;
-      --accent2: #1b1b1b;
-      --green: #c6ff4d;
-      --blue: #8fd3ff;
-      --purple: #d6b4ff;
-      --radius: 28px;
+      --bg: #03040a;
+      --card: rgba(255,255,255,0.055);
+      --card2: rgba(255,255,255,0.085);
+      --text: #f5f7fb;
+      --muted: #a5adbd;
+      --line: rgba(255,255,255,0.11);
+      --accent: #70e1ff;
+      --accent2: #a78bfa;
+      --accent3: #ff5fd2;
+      --lime: #b8ff5c;
+      --white: #ffffff;
+      --shadow: rgba(0,0,0,0.45);
     }
 
     * { box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Inter", "PingFang SC", "Microsoft YaHei", sans-serif;
-      background: var(--bg);
-      color: var(--ink);
-      line-height: 1.65;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      background:
+        radial-gradient(circle at 16% 18%, rgba(112,225,255,.18), transparent 28%),
+        radial-gradient(circle at 78% 8%, rgba(167,139,250,.20), transparent 30%),
+        radial-gradient(circle at 65% 80%, rgba(255,95,210,.13), transparent 28%),
+        linear-gradient(135deg, #03040a 0%, #090b16 48%, #04040a 100%);
+      color: var(--text);
+      line-height: 1.75;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(115deg, transparent 0%, rgba(255,255,255,.06) 18%, transparent 34%),
+        repeating-linear-gradient(90deg, rgba(255,255,255,.025) 0 1px, transparent 1px 110px),
+        repeating-linear-gradient(0deg, rgba(255,255,255,.018) 0 1px, transparent 1px 90px);
+      mix-blend-mode: screen;
+      opacity: .65;
+      z-index: 0;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      width: 520px;
+      height: 520px;
+      right: -180px;
+      top: 28%;
+      border-radius: 999px;
+      background: radial-gradient(circle, rgba(112,225,255,.18), rgba(167,139,250,.08), transparent 68%);
+      filter: blur(8px);
+      pointer-events: none;
+      z-index: 0;
     }
 
     a { color: inherit; text-decoration: none; }
 
-    .noise {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      opacity: .05;
-      background-image: radial-gradient(#000 1px, transparent 1px);
-      background-size: 4px 4px;
-      z-index: 99;
-    }
-
-    .wrap {
-      width: min(1180px, calc(100% - 36px));
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 1180px;
       margin: 0 auto;
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      backdrop-filter: blur(14px);
-      background: rgba(244,241,234,.78);
-      border-bottom: 1px solid rgba(23,23,23,.08);
+      padding: 34px 20px 80px;
     }
 
     .nav {
-      height: 72px;
+      position: sticky;
+      top: 16px;
+      z-index: 10;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       gap: 20px;
-      font-size: 14px;
+      padding: 14px 18px;
+      margin-bottom: 44px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(8,10,18,.62);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 20px 80px rgba(0,0,0,.25);
     }
 
     .brand {
-      font-weight: 900;
+      font-weight: 800;
       letter-spacing: -.03em;
-      font-size: 22px;
     }
 
-    .navlinks {
+    .nav-links {
       display: flex;
       gap: 18px;
       color: var(--muted);
-      align-items: center;
+      font-size: 14px;
     }
 
-    .navlinks a:hover { color: var(--ink); }
-
-    .pill {
-      border: 1px solid var(--ink);
-      border-radius: 999px;
-      padding: 8px 14px;
-      background: var(--ink);
-      color: white;
-      font-weight: 700;
-    }
+    .nav-links a:hover { color: var(--white); }
 
     .hero {
-      min-height: calc(100vh - 72px);
+      min-height: calc(100vh - 130px);
       display: grid;
       grid-template-columns: 1.15fr .85fr;
       gap: 28px;
       align-items: center;
-      padding: 56px 0;
+      padding: 28px 0 70px;
     }
 
     .eyebrow {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      padding: 8px 12px;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 14px;
       border: 1px solid var(--line);
       border-radius: 999px;
-      color: var(--muted);
-      background: rgba(255,255,255,.38);
-      font-size: 14px;
+      padding: 8px 12px;
+      background: rgba(255,255,255,.04);
+      backdrop-filter: blur(12px);
       margin-bottom: 22px;
     }
 
@@ -118,187 +134,195 @@
       height: 8px;
       border-radius: 50%;
       background: var(--accent);
-      display: inline-block;
+      box-shadow: 0 0 18px var(--accent);
     }
 
     h1 {
-      font-size: clamp(56px, 10vw, 132px);
-      line-height: .88;
+      font-size: clamp(48px, 8vw, 112px);
+      line-height: .92;
       margin: 0;
       letter-spacing: -.08em;
       max-width: 900px;
     }
 
+    .gradient {
+      background: linear-gradient(90deg, #fff, var(--accent), var(--accent2), var(--accent3));
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
     .hero-sub {
-      font-size: clamp(20px, 2.4vw, 34px);
-      line-height: 1.2;
-      letter-spacing: -.04em;
-      margin: 26px 0 0;
-      max-width: 860px;
-      color: #2a2825;
+      margin: 28px 0 0;
+      font-size: clamp(18px, 2.2vw, 28px);
+      line-height: 1.35;
+      color: #dce3ef;
+      max-width: 820px;
     }
 
-    .hero-sub span {
-      background: linear-gradient(transparent 58%, var(--green) 0);
-      font-weight: 900;
-    }
-
-    .hero-card {
-      border: 1px solid var(--ink);
-      border-radius: var(--radius);
-      padding: 28px;
-      background: var(--card);
-      box-shadow: 12px 12px 0 var(--ink);
-      transform: rotate(1.2deg);
-    }
-
-    .hero-card h2 {
-      margin: 0 0 12px;
-      font-size: 32px;
-      line-height: 1.05;
-      letter-spacing: -.05em;
-    }
-
-    .hero-card p {
-      color: var(--muted);
-      margin: 0 0 18px;
-    }
-
-    .quick {
-      display: grid;
-      gap: 10px;
-      font-size: 15px;
-    }
-
-    .quick div {
-      border-top: 1px solid var(--line);
-      padding-top: 10px;
-    }
+    .hero-sub strong { color: var(--white); }
 
     .actions {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-top: 30px;
+      margin-top: 34px;
     }
 
-    .button {
-      border: 1px solid var(--ink);
-      border-radius: 999px;
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      color: var(--text);
+      background: rgba(255,255,255,.06);
+      backdrop-filter: blur(12px);
+      font-weight: 700;
+      transition: transform .2s ease, border-color .2s ease, background .2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(112,225,255,.55);
+      background: rgba(112,225,255,.12);
+    }
+
+    .btn.primary {
+      background: linear-gradient(90deg, rgba(112,225,255,.22), rgba(167,139,250,.22));
+      border-color: rgba(112,225,255,.35);
+    }
+
+    .glass-card {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      background: linear-gradient(145deg, rgba(255,255,255,.11), rgba(255,255,255,.035));
+      box-shadow: 0 28px 100px var(--shadow), inset 0 1px 0 rgba(255,255,255,.12);
+      backdrop-filter: blur(20px);
+      padding: 28px;
+    }
+
+    .glass-card::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      background: linear-gradient(135deg, rgba(112,225,255,.18), transparent 30%, rgba(255,95,210,.14));
+      pointer-events: none;
+      opacity: .9;
+    }
+
+    .glass-card > * { position: relative; z-index: 1; }
+
+    .quote {
+      font-size: clamp(24px, 3vw, 40px);
       font-weight: 800;
-      background: white;
-      box-shadow: 4px 4px 0 var(--ink);
-      transition: transform .18s, box-shadow .18s;
+      line-height: 1.18;
+      letter-spacing: -.05em;
+      margin: 0 0 24px;
     }
 
-    .button:hover {
-      transform: translate(3px, 3px);
-      box-shadow: 1px 1px 0 var(--ink);
+    .meta {
+      display: grid;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 15px;
     }
 
-    .button.dark {
-      background: var(--ink);
-      color: white;
-    }
-
-    section {
-      padding: 70px 0;
+    .meta div {
+      padding-top: 12px;
       border-top: 1px solid var(--line);
+    }
+
+    .section {
+      margin-top: 34px;
     }
 
     .section-head {
       display: grid;
       grid-template-columns: .7fr 1.3fr;
       gap: 28px;
-      margin-bottom: 32px;
+      margin-bottom: 22px;
     }
 
-    .section-label {
-      font-size: 14px;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: .08em;
+    .label {
+      color: var(--accent);
       font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      font-size: 13px;
     }
 
-    .section-title {
-      font-size: clamp(32px, 5vw, 72px);
-      line-height: .96;
-      letter-spacing: -.07em;
+    h2 {
+      font-size: clamp(30px, 4.8vw, 64px);
+      line-height: 1.02;
+      letter-spacing: -.06em;
       margin: 0;
     }
 
-    .story-grid {
+    h3 {
+      font-size: 22px;
+      line-height: 1.2;
+      margin: 0 0 8px;
+      letter-spacing: -.03em;
+    }
+
+    .story {
+      font-size: 18px;
+      color: #d9dde7;
+      margin: 0 0 14px;
+    }
+
+    .grid-3 {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
+      gap: 18px;
     }
 
-    .story-card {
-      padding: 24px;
-      border: 1px solid var(--ink);
-      border-radius: 24px;
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 26px;
       background: var(--card);
-      min-height: 250px;
+      box-shadow: 0 20px 70px rgba(0,0,0,.22), inset 0 1px 0 rgba(255,255,255,.08);
+      backdrop-filter: blur(16px);
+      padding: 26px;
+    }
+
+    .card p { color: var(--muted); }
+
+    .kicker {
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+
+    .tags {
       display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
     }
 
-    .story-card:nth-child(2) { background: #effcff; }
-    .story-card:nth-child(3) { background: #f7efff; }
-
-    .num {
+    .tag {
+      background: rgba(255,255,255,.06);
+      color: #dce3ef;
+      border: 1px solid var(--line);
+      padding: 8px 12px;
+      border-radius: 999px;
       font-size: 14px;
-      color: var(--muted);
-      font-weight: 900;
-    }
-
-    .story-card h3 {
-      font-size: 28px;
-      line-height: 1.02;
-      letter-spacing: -.05em;
-      margin: 20px 0 12px;
-    }
-
-    .story-card p { margin: 0; color: var(--muted); }
-
-    .marquee {
-      overflow: hidden;
-      border-top: 1px solid var(--ink);
-      border-bottom: 1px solid var(--ink);
-      background: var(--ink);
-      color: white;
-      padding: 14px 0;
-      margin: 30px 0 0;
-      white-space: nowrap;
-    }
-
-    .marquee span {
-      display: inline-block;
-      padding-right: 40px;
-      animation: move 30s linear infinite;
-      font-weight: 900;
-      letter-spacing: -.02em;
-    }
-
-    @keyframes move {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
     }
 
     .metrics {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
-    }
-
-    .metric {
-      border: 1px solid var(--ink);
-      border-radius: 24px;
-      padding: 22px;
-      background: white;
+      gap: 16px;
     }
 
     .metric strong {
@@ -307,481 +331,337 @@
       line-height: 1;
       letter-spacing: -.06em;
       margin-bottom: 10px;
+      background: linear-gradient(90deg, var(--white), var(--accent));
+      -webkit-background-clip: text;
+      color: transparent;
     }
 
     .metric p { margin: 0; color: var(--muted); }
 
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-
-    .project {
-      border: 1px solid var(--ink);
-      border-radius: 28px;
-      overflow: hidden;
-      background: white;
-      display: flex;
-      flex-direction: column;
-      min-height: 460px;
-    }
-
-    .project-cover {
-      min-height: 180px;
-      padding: 24px;
-      display: flex;
-      align-items: flex-end;
-      background:
-        radial-gradient(circle at 20% 20%, rgba(255,255,255,.55), transparent 22%),
-        linear-gradient(135deg, var(--accent), #ffb347);
-      border-bottom: 1px solid var(--ink);
-    }
-
-    .project:nth-child(2) .project-cover {
-      background:
-        radial-gradient(circle at 80% 10%, rgba(255,255,255,.58), transparent 25%),
-        linear-gradient(135deg, #111, #4f46e5);
-      color: white;
-    }
-
-    .project:nth-child(3) .project-cover {
-      background:
-        radial-gradient(circle at 70% 20%, rgba(255,255,255,.5), transparent 25%),
-        linear-gradient(135deg, #22c55e, #14b8a6);
-      color: #08130d;
-    }
-
-    .project h3 {
-      font-size: 34px;
-      line-height: 1;
-      margin: 0;
-      letter-spacing: -.06em;
-      max-width: 360px;
-    }
-
-    .project-body {
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      flex: 1;
-    }
-
-    .project-body p { margin: 0; color: var(--muted); }
-
-    .bullets {
-      margin: 0;
-      padding-left: 18px;
-      color: #302d28;
-    }
-
-    .bullets li { margin: 8px 0; }
-
     .timeline {
       display: grid;
-      gap: 14px;
+      gap: 18px;
     }
 
-    .role {
+    .job {
       display: grid;
-      grid-template-columns: 220px 1fr;
+      grid-template-columns: 210px 1fr;
       gap: 24px;
-      padding: 26px 0;
+      padding: 28px 0;
       border-bottom: 1px solid var(--line);
     }
 
-    .role:last-child { border-bottom: 0; }
+    .job:last-child { border-bottom: 0; }
 
-    .date {
+    .sub {
       color: var(--muted);
+      font-size: 14px;
       font-weight: 800;
-      font-size: 14px;
     }
 
-    .role h3 {
-      font-size: 28px;
-      line-height: 1.08;
-      letter-spacing: -.04em;
-      margin: 0 0 8px;
+    ul {
+      margin: 12px 0 0;
+      padding-left: 20px;
+      color: #d9dde7;
     }
 
-    .role p {
-      margin: 0;
-      color: var(--muted);
-      max-width: 760px;
-    }
+    li { margin: 7px 0; }
 
-    .tags {
+    .project {
+      min-height: 360px;
       display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 16px;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
-    .tag {
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      padding: 8px 12px;
-      background: rgba(255,255,255,.55);
-      color: #333;
-      font-size: 14px;
+    .project-top {
+      min-height: 120px;
+      border-radius: 20px;
+      margin: -10px -10px 22px;
+      padding: 20px;
+      display: flex;
+      align-items: end;
+      background: linear-gradient(135deg, rgba(112,225,255,.32), rgba(167,139,250,.18), rgba(255,95,210,.16));
+      border: 1px solid rgba(255,255,255,.12);
+      overflow: hidden;
+      position: relative;
     }
+
+    .project-top::after {
+      content: "";
+      position: absolute;
+      width: 170px;
+      height: 170px;
+      right: -40px;
+      top: -50px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,.38), transparent 64%);
+      filter: blur(2px);
+    }
+
+    .project-top h3 { margin: 0; font-size: 30px; }
 
     .about {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 22px;
-      align-items: stretch;
+      gap: 18px;
     }
 
     .about .big {
-      border: 1px solid var(--ink);
-      border-radius: 28px;
-      padding: 28px;
-      background: var(--ink);
-      color: white;
-      font-size: clamp(28px, 4vw, 52px);
-      line-height: 1.04;
+      font-size: clamp(30px, 4vw, 56px);
+      font-weight: 850;
+      line-height: 1.05;
       letter-spacing: -.06em;
-      font-weight: 900;
     }
 
-    .about .text {
-      border: 1px solid var(--ink);
-      border-radius: 28px;
-      padding: 28px;
-      background: var(--card);
+    .footer {
+      text-align: center;
       color: var(--muted);
-      font-size: 18px;
-    }
-
-    footer {
-      padding: 48px 0 70px;
-      color: var(--muted);
-      display: flex;
-      justify-content: space-between;
-      gap: 18px;
-      border-top: 1px solid var(--line);
+      margin-top: 48px;
+      font-size: 14px;
     }
 
     @media (max-width: 900px) {
-      .hero, .section-head, .story-grid, .metrics, .project-grid, .about {
-        grid-template-columns: 1fr;
-      }
-
-      .hero {
-        min-height: auto;
-        padding: 46px 0;
-      }
-
-      .hero-card {
-        transform: none;
-        box-shadow: 8px 8px 0 var(--ink);
-      }
-
-      .role {
-        grid-template-columns: 1fr;
-        gap: 8px;
-      }
-
-      .navlinks {
-        display: none;
-      }
-
-      section { padding: 54px 0; }
-
-      .metrics {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 520px) {
-      .metrics { grid-template-columns: 1fr; }
-      .wrap { width: min(100% - 24px, 1180px); }
-      .project { min-height: auto; }
-      footer { flex-direction: column; }
+      .nav-links { display: none; }
+      .hero, .section-head, .grid-3, .grid-2, .metrics, .about { grid-template-columns: 1fr; }
+      .job { grid-template-columns: 1fr; gap: 8px; }
+      .hero { min-height: auto; padding-top: 10px; }
     }
   </style>
 </head>
-
 <body>
-  <div class="noise"></div>
-
-  <header>
-    <nav class="wrap nav">
-      <a class="brand" href="#">Craig Qu</a>
-      <div class="navlinks">
+  <main class="container">
+    <nav class="nav">
+      <a class="brand" href="#">黄政怡</a>
+      <div class="nav-links">
         <a href="#story">职业主线</a>
-        <a href="#projects">项目</a>
+        <a href="#abilities">能力</a>
         <a href="#experience">经历</a>
-        <a href="#about">关于我</a>
-        <a class="pill" href="#contact">Open to Work</a>
+        <a href="#projects">项目</a>
+        <a href="#contact">联系</a>
       </div>
     </nav>
-  </header>
 
-  <main>
-    <section class="wrap hero">
+    <section class="hero">
       <div>
-        <div class="eyebrow"><span class="dot"></span> 电竞IP内容导演 / 内容生态运营</div>
-        <h1>让电竞赛事<br/>被看见、被讨论、被记住。</h1>
+        <div class="eyebrow"><span class="dot"></span> 游戏IP内容 / 品牌内容生态 / 大型直播内容</div>
+        <h1>让内容IP<br/><span class="gradient">被看见、被讨论、被记住。</span></h1>
         <p class="hero-sub">
-          我从央视大型直播、综艺与音乐现场进入电竞行业，长期参与 PEL / PEC 等头部赛事内容建设。相比单点活动执行，我更擅长把赛事做成 <span>有故事、有情绪、有传播</span> 的内容IP。
+          我从央视大型直播、综艺与音乐现场进入游戏与内容行业，长期参与大型游戏IP、电竞赛事、品牌活动与直播内容生态建设。相比单点活动执行，我更擅长把内容做成 <strong>有故事、有情绪、有传播</strong> 的长期IP体验。
         </p>
         <div class="actions">
-          <a class="button dark" href="#projects">查看代表项目</a>
-          <a class="button" href="#experience">查看工作经历</a>
+          <a class="btn primary" href="#projects">查看代表项目</a>
+          <a class="btn" href="#experience">查看工作经历</a>
         </div>
       </div>
 
-      <aside class="hero-card">
-        <h2>不是活动执行，<br/>是电竞内容体验设计。</h2>
-        <p>我关注年轻用户为什么会持续关注一个赛事，为什么愿意讨论，为什么会形成情绪和归属感。</p>
-        <div class="quick">
-          <div>📍 珠海｜目标：上海 / 深圳 / 广州 / 杭州 / 成都</div>
-          <div>🎮 方向：电竞内容、游戏IP、内容生态、品牌内容</div>
-          <div>🎓 西安音乐学院｜电子音乐作曲｜统招本科</div>
+      <aside class="glass-card">
+        <p class="quote">“我想做的不是一场活动，而是一个能被用户记住的内容IP。”</p>
+        <div class="meta">
+          <div>📍 当前所在地：珠海</div>
+          <div>🎯 目标城市：上海 / 深圳 / 广州 / 杭州 / 成都</div>
+          <div>💼 方向：游戏IP、品牌内容、市场活动、直播内容生态</div>
+          <div>📞 电话：152-1082-0630</div>
+          <div>✉️ 邮箱：craig.huangzy@outlook.com</div>
         </div>
       </aside>
     </section>
 
-    <div class="marquee">
-      <span>ESPORTS IP · LIVE SHOW · STORYTELLING · YOUNG CULTURE · UGC · XR/AR · VIRTUAL PERFORMANCE · EVENT SYSTEM · USER EMOTION · </span>
-      <span>ESPORTS IP · LIVE SHOW · STORYTELLING · YOUNG CULTURE · UGC · XR/AR · VIRTUAL PERFORMANCE · EVENT SYSTEM · USER EMOTION · </span>
-    </div>
-
-    <section id="story" class="wrap">
+    <section id="story" class="section">
       <div class="section-head">
-        <div class="section-label">01 / Career Story</div>
-        <h2 class="section-title">我的职业路径不是横跳，而是从内容工业走向电竞娱乐工业。</h2>
+        <div class="label">01 / Career Story</div>
+        <h2>我的职业路径不是横跳，而是从传统内容工业走向游戏与品牌内容生态。</h2>
       </div>
-
-      <div class="story-grid">
-        <article class="story-card">
-          <div class="num">01</div>
-          <div>
-            <h3>大型直播底层能力</h3>
-            <p>央视阶段建立了我对直播安全、舞台节奏、视听语言和多工种协同的基本盘。</p>
-          </div>
-        </article>
-
-        <article class="story-card">
-          <div class="num">02</div>
-          <div>
-            <h3>综艺与人物内容</h3>
-            <p>灿星阶段让我理解，观众记住的不是流程，而是人物、故事和情绪。</p>
-          </div>
-        </article>
-
-        <article class="story-card">
-          <div class="num">03</div>
-          <div>
-            <h3>电竞IP内容系统</h3>
-            <p>在PEL/PEC中，我开始把赛事、选手、世界观、社媒传播和线下体验整合成长期内容IP。</p>
-          </div>
-        </article>
+      <div class="grid-3">
+        <div class="card">
+          <div class="kicker">央视大型直播</div>
+          <h3>建立大型内容工业化底盘</h3>
+          <p>从直播晚会、音乐编辑和舞台协同开始，建立我对直播安全、视听节奏、流程严谨度与多工种协作的底层理解。</p>
+        </div>
+        <div class="card">
+          <div class="kicker">综艺与音乐现场</div>
+          <h3>理解人物、情绪与舞台表达</h3>
+          <p>在综艺项目中接触选手故事、人物关系、音乐现场与舞台呈现，开始理解观众真正记住的不是流程，而是人物和情绪。</p>
+        </div>
+        <div class="card">
+          <div class="kicker">游戏IP与内容生态</div>
+          <h3>把内容变成长期用户关系</h3>
+          <p>在游戏与电竞项目中，将世界观、用户情绪、社媒传播、品牌活动与线下体验整合成更容易被讨论、传播和记住的内容IP。</p>
+        </div>
       </div>
     </section>
 
-    <section class="wrap">
-      <div class="section-head">
-        <div class="section-label">02 / Proof</div>
-        <h2 class="section-title">我保留最可信、最能说明问题的结果。</h2>
+    <section id="abilities" class="section grid-2">
+      <div class="card">
+        <h2>核心能力</h2>
+        <div class="tags" style="margin-top:18px;">
+          <span class="tag">游戏IP内容策划</span>
+          <span class="tag">品牌内容生态运营</span>
+          <span class="tag">市场活动内容策划</span>
+          <span class="tag">大型直播项目统筹</span>
+          <span class="tag">年轻用户内容洞察</span>
+          <span class="tag">用户情绪与体验设计</span>
+          <span class="tag">IP叙事与世界观表达</span>
+          <span class="tag">UGC与短视频传播</span>
+          <span class="tag">虚拟人与真人融合演出</span>
+          <span class="tag">跨团队与供应商协同</span>
+          <span class="tag">舞台内容与视听语言</span>
+          <span class="tag">品牌跨界合作内容</span>
+        </div>
       </div>
 
+      <div class="card">
+        <h2>代表结果</h2>
+        <ul>
+          <li>推动大型游戏IP相关话题热度从 <strong>5600万</strong> 提升至 <strong>27.3亿</strong> 浏览与讨论量。</li>
+          <li>通过线下观赛与用户体验升级，推动售票率同比历史阶段提升 <strong>45%</strong>。</li>
+          <li>评论席综艺化升级后，赛前直播时段5分钟用户停留提升 <strong>20%</strong>。</li>
+          <li>直接管理 <strong>11人核心内容团队</strong>，大型项目中协同50-300人规模执行团队。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div class="label">02 / Proof</div>
+        <h2>我保留最可信、最能说明问题的结果。</h2>
+      </div>
       <div class="metrics">
-        <div class="metric">
-          <strong>27.3亿</strong>
-          <p>PEL相关话题浏览与讨论热度，从5600万提升至27.3亿。</p>
-        </div>
-        <div class="metric">
-          <strong>45%</strong>
-          <p>通过线下观赛体验升级，推动售票率同比历史阶段提升。</p>
-        </div>
-        <div class="metric">
-          <strong>20%</strong>
-          <p>评论席综艺化升级后，赛前直播5分钟用户停留提升。</p>
-        </div>
-        <div class="metric">
-          <strong>11人</strong>
-          <p>直接管理核心内容团队，大型项目中协同50-300人执行团队。</p>
-        </div>
+        <div class="card metric"><strong>27.3亿</strong><p>大型游戏IP相关话题浏览与讨论热度。</p></div>
+        <div class="card metric"><strong>45%</strong><p>线下用户体验升级带来的售票率提升。</p></div>
+        <div class="card metric"><strong>20%</strong><p>直播内容优化带来的5分钟停留提升。</p></div>
+        <div class="card metric"><strong>300人</strong><p>大型项目中协同的跨部门与供应商团队规模。</p></div>
       </div>
     </section>
 
-    <section id="projects" class="wrap">
+    <section id="experience" class="section card">
       <div class="section-head">
-        <div class="section-label">03 / Selected Projects</div>
-        <h2 class="section-title">代表项目不是堆经历，而是证明我的工作方式。</h2>
+        <div class="label">03 / Experience</div>
+        <h2>工作经历</h2>
       </div>
-
-      <div class="project-grid">
-        <article class="project">
-          <div class="project-cover">
-            <h3>PEL内容体系升级</h3>
-          </div>
-          <div class="project-body">
-            <p>从赛事内容、用户体验与社媒传播方向，对PEL进行长期内容升级。</p>
-            <ul class="bullets">
-              <li>将赛事从硬核竞技表达升级为更年轻化、社交化的电竞内容IP。</li>
-              <li>建立赛季主题、选手关系、新老对抗、战队故事等长期叙事。</li>
-              <li>结合抖音热梗和年轻用户内容习惯，策划UGC与短视频内容。</li>
-              <li>相关话题热度从5600万提升至27.3亿。</li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="project">
-          <div class="project-cover">
-            <h3>PSC和平精英超级杯</h3>
-          </div>
-          <div class="project-body">
-            <p>在不到2个月筹备周期内，担任非赛事内容总负责人，统筹7个品牌与内容环节。</p>
-            <ul class="bullets">
-              <li>包含Avatar年度皮肤大秀、明星舞台表演、空投节启动仪式、PEL × LPL合作发布。</li>
-              <li>涉及XR/AR、威亚、虚拟歌姬、一镜到底、多艺人协同与直播导播。</li>
-              <li>尝试建立“2050未来电竞世界观”的舞台内容表达。</li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="project">
-          <div class="project-cover">
-            <h3>评论席综艺化升级</h3>
-          </div>
-          <div class="project-body">
-            <p>把赛前评论席从功能性内容升级为更轻、更有互动感的用户内容场。</p>
-            <ul class="bullets">
-              <li>增加游戏互动、弹幕互动、赛外选手爆料、平台主播等内容形式。</li>
-              <li>帮助用户更快理解赛事、战队与选手关系。</li>
-              <li>推动赛前直播时段5分钟用户停留提升20%。</li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="project">
-          <div class="project-cover">
-            <h3>综艺与音乐现场</h3>
-          </div>
-          <div class="project-body">
-            <p>在《即刻电音》等项目中，负责选手人物内容沟通、故事挖掘和舞台表达。</p>
-            <ul class="bullets">
-              <li>从音乐、人物经历与舞台表达中建立人物情绪与故事感。</li>
-              <li>参与舞台内容改编、现场导演和音乐表达设计。</li>
-              <li>形成后来做电竞选手内容、群像叙事和赛事情绪的基础。</li>
-            </ul>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="experience" class="wrap">
-      <div class="section-head">
-        <div class="section-label">04 / Experience</div>
-        <h2 class="section-title">工作经历</h2>
-      </div>
-
       <div class="timeline">
-        <div class="role">
-          <div class="date">2023.10 - 2024.8</div>
+        <div class="job">
+          <div class="sub">2025.8 - 2025.11</div>
           <div>
-            <h3>英雄电竞 Hero Esports｜赛事总导演 / 内容负责人</h3>
-            <p>负责《和平精英职业联赛（PEL）》赛事内容体系升级与整体内容统筹，从单个环节导演转向整体赛事内容运营视角。</p>
-            <div class="tags">
-              <span class="tag">赛事内容体系</span>
-              <span class="tag">UGC传播</span>
-              <span class="tag">线下观赛体验</span>
-              <span class="tag">团队管理</span>
-            </div>
+            <h3>西山居 Seasun Games｜游戏品牌内容策划</h3>
+            <p>参与《解限机》相关品牌活动、游戏内容生态与用户运营方向探索，围绕游戏品牌活动、社区内容与用户触达场景进行策划。</p>
+            <ul>
+              <li>参与游戏品牌活动及内容策划。</li>
+              <li>参与用户运营、社区内容与私域触达方向探索。</li>
+              <li>理解游戏发行侧对于用户运营、品牌声量和内容触达的协同需求。</li>
+            </ul>
           </div>
         </div>
 
-        <div class="role">
-          <div class="date">2024.8 - 2025.8</div>
+        <div class="job">
+          <div class="sub">2024.8 - 2025.8</div>
           <div>
             <h3>快手 Kuaishou｜电竞主场管理负责人</h3>
-            <p>负责王者荣耀电竞主场及相关线下活动内容运营与项目统筹，参与电竞主场项目、现场体验与用户互动方向探索。</p>
-            <div class="tags">
-              <span class="tag">电竞主场</span>
-              <span class="tag">线下体验</span>
-              <span class="tag">项目统筹</span>
-            </div>
+            <p>负责王者荣耀电竞主场及相关线下活动内容运营与项目统筹，参与平台直播内容、用户互动与市场活动方向探索。</p>
+            <ul>
+              <li>参与电竞主场项目与线下活动整体推进。</li>
+              <li>负责赛事现场体验、内容活动及用户互动方向。</li>
+              <li>参与平台直播场景下的内容活动与用户体验探索。</li>
+            </ul>
           </div>
         </div>
 
-        <div class="role">
-          <div class="date">2025.8 - 2025.11</div>
+        <div class="job">
+          <div class="sub">2019.9 - 2024.8</div>
           <div>
-            <h3>西山居 Seasun Games｜电竞品牌策划</h3>
-            <p>参与《解限机》相关电竞赛事、展会及品牌内容方向工作，参与游戏品牌活动及电竞方向内容策划。</p>
-            <div class="tags">
-              <span class="tag">游戏品牌</span>
-              <span class="tag">电竞策划</span>
-              <span class="tag">社区探索</span>
-            </div>
+            <h3>英雄电竞 Hero Esports｜赛事总导演 / 品牌IP总导演 / 内容负责人</h3>
+            <p>长期参与《和平精英职业联赛（PEL）》与《和平精英国际冠军杯（PEC）》等头部游戏IP内容体系建设，从仪式导演逐渐成长为负责赛事内容、品牌IP、用户内容生态及大型直播统筹的角色。</p>
+            <ul>
+              <li>参与PEL早期从0到1内容建设，将电子音乐、XR/AR、舞台表演等内容语言与游戏IP结合。</li>
+              <li>将评论席进行综艺化升级，增加互动玩法、轻综艺节奏与用户内容表达，推动赛前直播停留提升。</li>
+              <li>围绕赛季主题、选手关系、新老对抗、战队故事等内容，建立长期叙事和用户情绪连接。</li>
+              <li>搭建UGC与短视频传播内容方向，结合平台热梗和年轻用户内容习惯，提升内容讨论与传播。</li>
+              <li>统筹PSC超级杯、PEC等大型项目中的品牌内容、明星表演、虚拟人、XR/AR、威亚、一镜到底等复合内容模块。</li>
+              <li>直接管理11人核心内容团队，项目执行期协同50-300人跨部门与供应商团队。</li>
+            </ul>
           </div>
         </div>
 
-        <div class="role">
-          <div class="date">2019.9 - 2022.7</div>
-          <div>
-            <h3>英雄电竞 Hero Esports｜仪式导演 → 评论席导演 → 品牌IP总导演</h3>
-            <p>长期参与PEL与PEC等大型电竞赛事内容体系搭建。逐渐从仪式导演成长为负责赛事内容表达、品牌IP内容及大型舞台内容统筹的角色。</p>
-            <div class="tags">
-              <span class="tag">PEL从0到1</span>
-              <span class="tag">XR/AR</span>
-              <span class="tag">跨界品牌</span>
-              <span class="tag">电竞娱乐化</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="role">
-          <div class="date">2018.7 - 2019.3</div>
+        <div class="job">
+          <div class="sub">2018.7 - 2019.3</div>
           <div>
             <h3>灿星制作 Star China｜选手导演FPD / 音乐现场导演</h3>
             <p>参与腾讯视频《即刻电音》等综艺节目内容制作，负责选手人物内容沟通、故事挖掘和舞台表达。</p>
-            <div class="tags">
-              <span class="tag">人物故事</span>
-              <span class="tag">音乐现场</span>
-              <span class="tag">综艺内容</span>
-            </div>
+            <ul>
+              <li>负责选手人物内容沟通与故事挖掘。</li>
+              <li>参与舞台内容改编与现场导演。</li>
+              <li>从音乐、人物经历与舞台表达中建立人物情绪与故事感。</li>
+            </ul>
           </div>
         </div>
 
-        <div class="role">
-          <div class="date">2015.6 - 2018.2</div>
+        <div class="job">
+          <div class="sub">2015.6 - 2018.2</div>
           <div>
             <h3>中央广播电视总台 CCTV｜编导 / 音乐编辑</h3>
             <p>参与央视大型直播晚会及综艺内容制作，建立大型直播内容节奏、视听语言及现场协同基础。</p>
-            <div class="tags">
-              <span class="tag">大型直播</span>
-              <span class="tag">音乐编辑</span>
-              <span class="tag">舞台协同</span>
-            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="about" class="wrap">
-      <div class="about">
-        <div class="big">
-          我想做的不是一场活动，而是一个能被用户记住的内容IP。
-        </div>
-        <div class="text">
-          <p>我一直对“年轻用户为什么会长期热爱一个内容IP”这件事情很感兴趣。</p>
-          <p>相比单纯完成一场活动，我更在意为什么用户愿意讨论，为什么会形成情绪，为什么会产生归属感，为什么一个赛事会被真正记住。</p>
-          <p>过去这些年，我做过很多大型直播和电竞赛事内容。但真正让我持续想做下去的，是电竞内容越来越像一种新的年轻人文化。</p>
-        </div>
+    <section id="projects" class="section grid-2">
+      <div class="card project">
+        <div class="project-top"><h3>游戏IP内容生态升级</h3></div>
+        <p>从内容表达、用户体验与社媒传播方向，对头部游戏IP进行长期内容升级。</p>
+        <ul>
+          <li>建立赛季叙事体系、人物关系内容和用户情绪线索。</li>
+          <li>推动硬核内容向年轻化、社交化、可传播的内容体验升级。</li>
+          <li>结合短视频平台热梗与用户内容习惯，提升话题讨论与二创传播。</li>
+        </ul>
+      </div>
+
+      <div class="card project">
+        <div class="project-top"><h3>大型品牌内容与市场活动</h3></div>
+        <p>担任非赛事内容总负责人，在有限周期内统筹多个品牌内容模块与大型直播呈现。</p>
+        <ul>
+          <li>统筹Avatar年度皮肤大秀、明星舞台表演、空投节启动仪式、跨IP合作发布等内容。</li>
+          <li>涉及XR/AR、威亚、虚拟歌姬、一镜到底、多艺人协同、大型舞台与直播导播。</li>
+          <li>尝试建立“未来游戏世界观”的沉浸式舞台内容表达。</li>
+        </ul>
+      </div>
+
+      <div class="card project">
+        <div class="project-top"><h3>直播内容与用户停留优化</h3></div>
+        <p>将功能型直播环节进行综艺化和内容化改造，增强用户理解、互动与停留。</p>
+        <ul>
+          <li>增加游戏互动、弹幕互动、选手爆料、平台主播等内容形式。</li>
+          <li>降低硬核赛事理解门槛，让更多泛用户理解人物和内容关系。</li>
+          <li>推动赛前直播时段5分钟用户停留提升20%。</li>
+        </ul>
+      </div>
+
+      <div class="card project">
+        <div class="project-top"><h3>综艺与音乐现场内容</h3></div>
+        <p>在综艺项目中负责选手人物内容沟通、故事挖掘和舞台表达，形成后来做人物内容与IP叙事的基础。</p>
+        <ul>
+          <li>从音乐、人物经历与舞台表达中建立人物情绪与故事感。</li>
+          <li>参与舞台内容改编、现场导演和音乐表达设计。</li>
+          <li>理解年轻用户对人物、情绪与舞台高光的记忆方式。</li>
+        </ul>
       </div>
     </section>
-  </main>
 
-  <footer id="contact" class="wrap">
-    <div>Craig Qu · 电竞IP内容导演</div>
-    <div>Open to opportunities in Gaming / Esports / IP Content</div>
-  </footer>
+    <section id="contact" class="section about">
+      <div class="card big">
+        我想做的不是一场活动，而是一个能被用户记住的内容IP。
+      </div>
+      <div class="card">
+        <h2>关于我</h2>
+        <p class="story">我一直对“年轻用户为什么会长期热爱一个内容IP”这件事情很感兴趣。</p>
+        <p class="story">相比单纯完成一场活动，我更在意为什么用户愿意讨论，为什么会形成情绪，为什么会产生归属感，为什么一个品牌或游戏IP会被真正记住。</p>
+        <p class="story">过去这些年，我做过很多大型直播、综艺、游戏IP和品牌内容项目。真正让我持续想做下去的，是内容越来越像一种新的年轻人文化，而我希望继续参与和创造属于这个时代的内容IP。</p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      © 黄政怡｜Game IP Content / Brand Experience / Live Content Ecosystem
+    </footer>
+  </main>
 </body>
 </html>
