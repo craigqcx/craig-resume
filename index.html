@@ -985,10 +985,64 @@
       text-transform: uppercase;
     }
 
+
+    .project-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+      opacity: .92;
+      filter: saturate(.95) contrast(1.02) brightness(.82);
+    }
+
+    .project-visual {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-visual::before {
+      z-index: 1 !important;
+    }
+
+    .project-visual h3,
+    .project-visual .visual-note {
+      position: relative;
+      z-index: 2 !important;
+    }
+
     @media (max-width: 960px) {
       .brand::after { display: none; }
       .signature-name { margin-top: 22px; }
       .portrait-wrap { width: min(310px, 86%); }
+    }
+
+
+    .project-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+      opacity: .92;
+      filter: saturate(.95) contrast(1.02) brightness(.82);
+    }
+
+    .project-visual {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-visual::before {
+      z-index: 1 !important;
+    }
+
+    .project-visual h3,
+    .project-visual .visual-note {
+      position: relative;
+      z-index: 2 !important;
     }
 
     @media (max-width: 960px) {
@@ -1232,7 +1286,13 @@
       </div>
     </section>
 
-    <section id="projects" class="section reveal">
+    <!-- Video files required:
+videos/project-ip.mp4
+videos/project-brand.mp4
+videos/project-live.mp4
+videos/project-show.mp4
+-->
+<section id="projects" class="section reveal">
       <div class="section-head">
         <div class="label">05 / Selected Works</div>
         <h2>代表项目不是堆经历，而是证明我的工作方式。</h2>
@@ -1240,7 +1300,13 @@
 
       <div class="projects">
         <article class="glass project large">
-          <div class="project-visual visual-ip"><span class="visual-note">IP Ecosystem</span><h3>游戏IP内容生态升级</h3></div>
+          <div class="project-visual visual-ip">
+      <video class="project-video" autoplay muted loop playsinline>
+        <source src="videos/project-ip.mp4" type="video/mp4">
+      </video>
+      <span class="visual-note">IP Ecosystem</span>
+      <h3>游戏IP内容生态升级</h3>
+    </div>
           <p>从内容表达、用户体验与社媒传播方向，对头部游戏IP进行长期内容升级。</p>
           <ul>
             <li>建立赛季叙事体系、人物关系内容和用户情绪线索。</li>
@@ -1250,7 +1316,13 @@
         </article>
 
         <article class="glass project medium">
-          <div class="project-visual visual-brand"><span class="visual-note">Brand Experience</span><h3>大型品牌内容与市场活动</h3></div>
+          <div class="project-visual visual-brand">
+      <video class="project-video" autoplay muted loop playsinline>
+        <source src="videos/project-brand.mp4" type="video/mp4">
+      </video>
+      <span class="visual-note">Brand Experience</span>
+      <h3>大型品牌内容与市场活动</h3>
+    </div>
           <p>担任非赛事内容总负责人，在有限周期内统筹多个品牌内容模块与大型直播呈现。</p>
           <ul>
             <li>统筹Avatar年度皮肤大秀、明星舞台表演、空投节启动仪式、跨IP合作发布等内容。</li>
@@ -1259,7 +1331,13 @@
         </article>
 
         <article class="glass project small">
-          <div class="project-visual visual-live"><span class="visual-note">Live Content</span><h3>直播内容与用户停留优化</h3></div>
+          <div class="project-visual visual-live">
+      <video class="project-video" autoplay muted loop playsinline>
+        <source src="videos/project-live.mp4" type="video/mp4">
+      </video>
+      <span class="visual-note">Live Content</span>
+      <h3>直播内容与用户停留优化</h3>
+    </div>
           <p>将功能型直播环节进行综艺化和内容化改造，增强用户理解、互动与停留。</p>
           <ul>
             <li>增加游戏互动、弹幕互动、选手爆料、平台主播等内容形式。</li>
@@ -1269,7 +1347,13 @@
         </article>
 
         <article class="glass project small">
-          <div class="project-visual visual-show"><span class="visual-note">Show & Music</span><h3>综艺与音乐现场内容</h3></div>
+          <div class="project-visual visual-show">
+      <video class="project-video" autoplay muted loop playsinline>
+        <source src="videos/project-show.mp4" type="video/mp4">
+      </video>
+      <span class="visual-note">Show & Music</span>
+      <h3>综艺与音乐现场内容</h3>
+    </div>
           <p>在综艺项目中负责选手人物内容沟通、故事挖掘和舞台表达，形成后来做人物内容与IP叙事的基础。</p>
           <ul>
             <li>从音乐、人物经历与舞台表达中建立人物情绪与故事感。</li>
